@@ -50,19 +50,21 @@ public class PublicTester {
 
         //Set with 3 elements
         threeElementSet = new MyHashSet<String>();
-        
-        MyHashMap<String, Object>.Node<String, Object> setElement1 =  
-            threeElementSet.hashMap.new Node<String, Object>("A", MyHashSet.DEFAULT_OBJECT);
-        MyHashMap<String, Object>.Node<String, Object> setElement2 =  
-            threeElementSet.hashMap.new Node<String, Object>("B", MyHashSet.DEFAULT_OBJECT);
-        MyHashMap<String, Object>.Node<String, Object> setElement3 =  
-            threeElementSet.hashMap.new Node<String, Object>("F", MyHashSet.DEFAULT_OBJECT);
 
-        threeElementSet.hashMap.hashTable[0] = setElement1;
-        threeElementSet.hashMap.hashTable[1] = setElement2;
-        setElement1.setNext(setElement3);
+        if (threeElementSet.hashMap != null) {
+            MyHashMap<String, Object>.Node<String, Object> setElement1 =
+                threeElementSet.hashMap.new Node<String, Object>("A", MyHashSet.DEFAULT_OBJECT);
+            MyHashMap<String, Object>.Node<String, Object> setElement2 =
+                threeElementSet.hashMap.new Node<String, Object>("B", MyHashSet.DEFAULT_OBJECT);
+            MyHashMap<String, Object>.Node<String, Object> setElement3 =
+                threeElementSet.hashMap.new Node<String, Object>("F", MyHashSet.DEFAULT_OBJECT);
 
-        threeElementSet.hashMap.size = 3;
+            threeElementSet.hashMap.hashTable[0] = setElement1;
+            threeElementSet.hashMap.hashTable[1] = setElement2;
+            setElement1.setNext(setElement3);
+
+            threeElementSet.hashMap.size = 3;
+        }
     }
 
     // ----------------MyHashMap class----------------
